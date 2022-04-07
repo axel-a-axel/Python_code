@@ -4,12 +4,7 @@ import copy
 def recursion_sum(arr):
     if len(arr) == 0:
         return 0
-    elif len(arr) == 1:
-        return arr[0]
-    else:
-        arr_b = copy.copy(arr)
-        arr_b.pop(0)
-        return arr[0] + recursion_sum(arr_b)
+    return arr[0] + recursion_sum(arr[1:])
 
 def non_rec_sum(arr):
     summed_arr = 0
