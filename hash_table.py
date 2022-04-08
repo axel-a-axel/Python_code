@@ -41,6 +41,14 @@ def generate_graph():
         current = fill_que.popleft()
         graph[current] = [generate_random_string(5), generate_random_string(5), generate_random_string(5)]
     print(graph)
+    empty_fill_que = deque()
+    empty_fill_que += graph[first_in_graph]
+    while empty_fill_que:
+        ecurrent = empty_fill_que.popleft()
+        empty_array = []
+        if ecurrent not in graph:
+            graph[ecurrent] = empty_array
+
     return graph
 
 
